@@ -1,0 +1,213 @@
+import styled from 'styled-components';
+
+import ImageBackground from '../../assets/images/FormPageBg.png';
+
+export const Container = styled.div`
+  width: 100vw;
+  height: fit-content;
+  background-image: url(${ImageBackground});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
+  @media screen and (max-width: 550px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: none;
+    background-color: white;
+  }
+`;
+
+export const Component = styled.div`
+  width: 60vw;
+  height: fit-content;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 25px;
+  margin-left: 100px;
+  @media screen and (max-width: 1200px) {
+    width: 70vw;
+  }
+  @media screen and (max-width: 768px) {
+    width: 80vw;
+    margin-left: 0;
+  }
+  @media screen and (max-width: 550px) {
+    width: 90%;
+    height: 80%;
+    border-radius: 0;
+    padding: 30px;
+    margin-top: 100px;
+    margin-bottom: auto;
+  }
+`;
+
+export const AlertComponent = styled.div`
+  width: 63vw;
+  height: fit-content;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 23px;
+  margin-left: 100px;
+  margin-top: 30px;
+  @media screen and (max-width: 1200px) {
+    width: 75vw;
+  }
+  @media screen and (max-width: 768px) {
+    width: 85vw;
+    margin-left: 0;
+  }
+  @media screen and (max-width: 550px) {
+    width: 90%;
+    height: 20%;
+    border-radius: 0;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+`;
+
+export const TextWrapper = styled.div`
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #9A9A9A;
+    @media screen and (max-width: 550px) {
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+      padding-right: 0;
+    }
+  }
+`;
+
+export const AlertHeading = styled.div`
+  font-size: 18px;
+  font-weight: 500;
+  color: #009F80;
+  line-height: 25px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 550px) {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+  }
+`;
+
+export const Heading = styled.div`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  text-align: center;
+  @media screen and (max-width: 550px) {
+    margin-bottom: 30px;
+  }
+  img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    @media screen and (max-width: 550px) {
+      width: 40px;
+    }
+  }
+  span {
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    line-height: 35px;
+    text-transform: uppercase;
+    margin-left: 10px;
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 16px;
+      line-height: 23px;
+      margin-left: 0;
+    }
+  }
+`;
+
+export const InputContainer = styled.div`
+  width: 60%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  /* border: 2px solid red; */
+  @media screen and (max-width: 550px) {
+    width: 80%;
+  }
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  height: 55px;
+  background-color: #C6E5D3;
+  color: #009F80;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 13px;
+  border: none;
+  text-indent: 20px;
+  &:focus {
+    outline: none;
+  }
+  @media screen and (max-width: 550px) {
+    border-radius: 8px;
+  }
+  &::placeholder {
+    color: #009F80;
+    font-size: 17px;
+    font-weight: 500;
+    text-indent: 20px;
+  }
+`;
+
+export const Title = styled.div`
+  width: 85%;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 30px;
+  span {
+    color: #009F80;
+  }
+  @media screen and (max-width: 550px) {
+    font-size: 14px;
+    text-align: center;
+  }
+`;
