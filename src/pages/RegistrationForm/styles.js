@@ -67,14 +67,14 @@ export const Heading = styled.div`
     }
   }
   span {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     color: black;
     line-height: 35px;
     text-transform: uppercase;
     margin-left: 10px;
     @media screen and (max-width: 550px) {
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 `;
