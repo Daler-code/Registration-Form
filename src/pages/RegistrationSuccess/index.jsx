@@ -1,9 +1,30 @@
 import React from 'react';
 
-import {} from './styles';
+import {
+  Container, 
+  Component, 
+  Heading,
+  Title
+} from './styles';
+
+import ButtonPrimary from '../../components/Buttons';
+
+import IconSuccess from '../../assets/icons/tick.svg';
 
 const RegistrationSuccess = () => (
-  <h1>RegistrationSuccess page</h1>
+  <Container>
+    <Component>
+      <Heading>
+        <img src={IconSuccess} alt="sms"/>
+        <span>Спасибо за регистрацию!</span>
+      </Heading>
+      <Title>
+        В течении 30 минут ваш аккаунт пройдет верификацию. Статус верификации можно
+        проверить в личном кабинете. После можете приступать к покупкам.
+      </Title>
+      <ButtonPrimary btnPrimary>Кабинет</ButtonPrimary>
+    </Component>
+  </Container>
 );
 
 export default RegistrationSuccess;

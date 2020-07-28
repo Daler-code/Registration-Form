@@ -25,7 +25,7 @@ const RegistrationForm = () => (
     <Component>
       <Heading>
         <img src={IconAccount} alt="user"/>
-        <span>РЕГИСТРАЦИЯ</span>
+        <span>Регистрация</span>
       </Heading>
       <InputContainer>
       <Label>Ваш номер телефона</Label>
