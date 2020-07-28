@@ -171,3 +171,17 @@ export const PolicyLink =  styled(Link)`
     margin-left: 40px;
   }
 `;
+
+export const Title = styled.span`
+  font-size: 16px;
+  color: #9A9A9A;
+  font-weight: 500;
+  margin-top: 30px;
+`;
+
+export const LinkLogin = styled(Link)`
+  font-size: 16px;
+  color: #009F80;
+  font-weight: 500;
+  margin-top: 30px;
+`;

@@ -10,7 +10,9 @@ import {
   Mask,
   Input,
   PolicyLink,
-  CheckboxContainer
+  CheckboxContainer,
+  Title,
+  LinkLogin
 } from './styles';
 import './styles.css';
 
@@ -48,6 +50,7 @@ const RegistrationForm = () => (
         </PolicyLink>
       </CheckboxContainer>
       <ButtonPrimary btnPrimary>Дальше</ButtonPrimary>
+      <Title>Если у вас уже имеется аккаунт <LinkLogin to="/login">Войдите</LinkLogin> </Title>
     </Component>
   </Container>
 );
