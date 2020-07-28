@@ -1,9 +1,41 @@
 import React from 'react';
 
-import {} from './styles';
+import {
+  Container, 
+  Component, 
+  Heading,
+  InputContainer,
+  Input,
+  Title
+} from './styles';
+
+import ButtonPrimary from '../../components/Buttons';
+
+import IconSMS from '../../assets/icons/mail.svg';
 
 const SMSCodeCheckCard = () => (
-  <h1>SMSCodeCheckCard page</h1>
+  <Container>
+    <Component>
+      <Heading>
+        <img src={IconSMS} alt="sms"/>
+        <span>ПОДТВЕРЖДЕНИЕ КАРТЫ</span>
+      </Heading>
+      <InputContainer>
+        <Input 
+          type="tel" 
+          name="code" 
+          placeholder="Kод подтверждения"
+          maxLength="6"
+        />
+      </InputContainer>
+      <Title>
+        * На балансе Вашего 
+        <span> мобильного телефона </span> 
+        должно быть не менее 100 сум
+      </Title>
+      <ButtonPrimary btnPrimary>Дальше</ButtonPrimary>
+    </Component>
+  </Container>
 );
 
 export default SMSCodeCheckCard;
