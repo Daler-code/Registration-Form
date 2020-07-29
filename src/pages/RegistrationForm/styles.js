@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import MaskedInput from 'react-text-mask';
 
-
 import ImageBackground from '../../assets/images/FormPageBg.png';
 
 export const Container = styled.div`

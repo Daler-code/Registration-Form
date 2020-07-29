@@ -25,7 +25,7 @@ export const BtnPrimary = css`
   height: 60px;
   border: none;
   border-radius: 11px;
-  background-color: #009F80;
+  background-color: #ed6842;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -35,7 +35,7 @@ export const BtnPrimary = css`
     outline: none;
   }
   &:hover {
-    background-color: #009F8090;
+    background-color: #ed684290;
   }
   @media screen and (max-width: 550px) {
     width: ${(props) => props.short ? '80%' : '100%'};
