@@ -13,6 +13,7 @@ import ButtonPrimary from '../../components/Buttons';
 
 import IconSMS from '../../assets/icons/mail.svg';
 
+
 const SMSCodeCheckCard = () => (
   <Container>
     <Component>
@@ -25,7 +26,9 @@ const SMSCodeCheckCard = () => (
           type="tel" 
           name="code" 
           placeholder="Kод подтверждения"
-          maxLength="6"
+          mask={[/\d/, /\d/, /\d/, /\d/, /\d/, /\d/,]} 
+          showMask={false}
+          guide={false}
         />
       </InputContainer>
       <Title>

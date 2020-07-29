@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MaskedInput from 'react-text-mask';
 
 import ImageBackground from '../../assets/images/FormPageBg.png';
 
@@ -91,7 +92,7 @@ export const InputContainer = styled.div`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled(MaskedInput)`
   width: 100%;
   height: 55px;
   background-color: #C6E5D3;

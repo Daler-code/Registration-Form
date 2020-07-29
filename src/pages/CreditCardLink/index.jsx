@@ -32,7 +32,9 @@ const CreditCardLink = () => (
           type="tel" 
           name="code" 
           placeholder="Введите номер карты"
-          maxLength="16"
+          mask={[/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/,]} 
+          showMask={false}
+          guide={false}
         />
       </InputContainer>
       <InputContainer>
@@ -40,7 +42,9 @@ const CreditCardLink = () => (
           type="tel" 
           name="code" 
           placeholder="Введите месяц и год (мм/гг)"
-          maxLength="4"
+          mask={[/\d/, /\d/, '/', /\d/, /\d/,]} 
+          showMask={false}
+          guide={false}
         />
       </InputContainer>
       <ButtonPrimary short btnPrimary>Дальше</ButtonPrimary>

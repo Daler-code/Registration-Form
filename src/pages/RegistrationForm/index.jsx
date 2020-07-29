@@ -34,7 +34,7 @@ const RegistrationForm = () => (
         <Input 
           type="tel" 
           name="phone" 
-          mask={[' ',/\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]} 
+          mask={[/\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]} 
           showMask={true}
         />
       </InputRow>

@@ -25,7 +25,9 @@ const SMSCodeCheck = () => (
           type="tel" 
           name="code" 
           placeholder="Kод подтверждения"
-          maxLength="4"
+          mask={[/\d/, /\d/, /\d/, /\d/,]} 
+          showMask={false}
+          guide={false}
         />
       </InputContainer>
       <Title>На ваш номер был выслан <span>код подтверждения</span></Title>
