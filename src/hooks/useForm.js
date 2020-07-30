@@ -27,6 +27,8 @@ const useForm = () => {
     passport_self: '',
     phone: ''
   });
+  
+  // const token = window.btoa(user + ':' + pass);
 
   // HandleSubmit
   const handleSubmit = (event) => {
@@ -39,13 +41,12 @@ const useForm = () => {
     const username = '169632';
     const password = 'ykizECTJEku736Vva63eipJ7V7';
     const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
-    // const token = window.btoa(user + ':' + pass);
     axios.post( url, inputs,
       {
         headers: {
           'Authorization': `Basic ${token}`
         }
-      }
+      },
     )
     .then(function (response) {
       if (response.status === 200) {
