@@ -43,6 +43,15 @@ export const Component = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Heading = styled.div`
   width: 100%;
   height: fit-content;

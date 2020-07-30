@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Alert } from 'react-bootstrap';
 
 import { 
   Container, 
@@ -14,153 +15,215 @@ import {
   InputRow,
   Mask,
   Row3,
-  Img
+  Img,
+  Form
 } from './styles';
 import './styles.css';
 
 import ButtonPrimary from '../../components/Buttons';
+import  useForm from '../../hooks/useForm';
+import SpinnerSmall from '../../components/SpinnerSmall';
 
 import IconPassport from '../../assets/icons/passport.svg';
 
 const PasportDataForm = () => {
-  const [file1, setFile1] = useState(null);
-  const [file2, setFile2] = useState(null);
-  const [file3, setFile3] = useState(null);
-  const [imgExists1, setImgExists1] = useState(false);
-  const [imgExists2, setImgExists2] = useState(false);
-  const [imgExists3, setImgExists3] = useState(false);
+  const [show, setShow] = useState(true);
 
-  // Uploading File1
-  const  uploadFile1 = (e) => {
-    setFile1(URL.createObjectURL(e.target.files[0]))
-    setImgExists1(true)
-  };
-
-  // Uploading File2
-  const  uploadFile2 = (e) => {
-    setFile2(URL.createObjectURL(e.target.files[0]))
-    setImgExists2(true)
-  };
-
-  // Uploading File3
-  const  uploadFile3 = (e) => {
-    setFile3(URL.createObjectURL(e.target.files[0]))
-    setImgExists3(true)
-  };
-
-  // Setting url to img src
-  let imgPreview1;
-    if (file1) {
-        imgPreview1 = <img src={file1} alt='' />
-    };
-
-    // Setting url to img src
-  let imgPreview2;
-  if (file2) {
-      imgPreview2 = <img src={file2} alt='' />
-  };
-
-  // Setting url to img src
-  let imgPreview3;
-    if (file3) {
-        imgPreview3 = <img src={file3} alt='' />
-    };
-
+  const {
+    handleSubmit,
+    handleChange,
+    uploadFile1,
+    uploadFile2,
+    uploadFile3,
+    inputs,
+    submit,
+    error,
+    loading,
+    success,
+    imgPreview1,
+    imgPreview2,
+    imgPreview3,
+    imgExists1,
+    imgExists2,
+    imgExists3
+  } = useForm();
 
   return (
-  <Container>
-    <Component>
-      <Heading>
-        <img src={IconPassport} alt="sms"/>
-        <span>ИНФОРМАЦИЯ О ПАСПОРТЕ</span>
-      </Heading>
-      <SubHeading>ВВЕДИТЕ ПАСПОРТНЫЕ ДАННЫЕ</SubHeading>
-      <Row2>
-      <InputRow>
-          <Mask><span>+(998)</span></Mask>
-          <InputTel 
-            type="tel" 
-            name="phone" 
-            mask={[/\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]} 
-            showMask={false}
-            placeholder="Ваш телефон"
-          />
-        </InputRow>
-      </Row2>
-      <Row>
-        <Input type="text" minLength="2" maxLength="20"  placeholder="Имя на латинице" />
-        <Input type="text" minLength="2" maxLength="20" placeholder="Фамилия на латинице" />
-      </Row>
-      <Row>
-        <Input type="text" minLength="2" maxLength="20" placeholder="Отчество на латинице" /> 
-        <Input type="text" minLength="2" maxLength="100" placeholder="Место работы/учебы" />
-      </Row>
-      <Row>
-        <Input type="text" minLength="2" maxLength="100" placeholder="Постоянный адрес" /> 
-      <InputRow>
-          <Mask><span>+(998)</span></Mask>
-          <InputTel 
-            type="tel" 
-            name="phone" 
-            mask={[/\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]} 
-            showMask={false}
-            placeholder="Домашний телефон"
-          />
-        </InputRow>
-      </Row>
-      <Row3>
-        <Column> 
-          <DocumentContainer>
+    <Container>
+      <Component>
+        {
+          success && show ? (
+            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+              <Alert.Heading>You have Registered successfully!</Alert.Heading>
+              <p>You are redirected to  Credit cards link page in 5 seconds!</p>
+            </Alert>
+          ) : (
+            null
+          )
+        }
+        <Heading>
+          <img src={IconPassport} alt="sms"/>
+          <span>ИНФОРМАЦИЯ О ПАСПОРТЕ</span>
+        </Heading>
+        <SubHeading>ВВЕДИТЕ ПАСПОРТНЫЕ ДАННЫЕ</SubHeading>
+        <Form onSubmit={handleSubmit}>
+          <Row2>
+          <InputRow>
+              <Mask><span>+(998)</span></Mask>
+              <InputTel 
+                type="tel" 
+                name="phone" 
+                mask={[/\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]} 
+                showMask={false}
+                placeholder="Ваш телефон"
+                value={inputs.phone}
+                onChange={handleChange}
+              />
+            </InputRow>
+          </Row2>
+          <Row>
+            <Input 
+              type="text" 
+              name="username"
+              minLength="2" 
+              maxLength="20"  
+              placeholder="Имя на латинице" 
+              value={inputs.username}
+              onChange={handleChange}
+            />
+            <Input 
+              type="text"
+              name="lastname" 
+              minLength="2" 
+              maxLength="20" 
+              placeholder="Фамилия на латинице" 
+              value={inputs.lastname} 
+              onChange={handleChange}
+            />
+          </Row>
+          <Row>
+            <Input 
+              type="text" 
+              name="patronymic"
+              minLength="2" 
+              maxLength="20" 
+              placeholder="Отчество на латинице" 
+              value={inputs.patronymic} 
+              onChange={handleChange}
+            /> 
+            <Input 
+              type="text" 
+              name='work_place'
+              minLength="2" 
+              maxLength="100" 
+              placeholder="Место 
+              работы/учебы" 
+              value={inputs.work_place} 
+              onChange={handleChange}
+            />
+          </Row>
+          <Row>
+            <Input 
+              type="text" 
+              name="permanent_address"
+              minLength="2" 
+              maxLength="100" 
+              placeholder="Постоянный адрес" 
+              value={inputs.permanent_address}
+              onChange={handleChange}
+            /> 
+          <InputRow>
+              <Mask><span>+(998)</span></Mask>
+              <InputTel 
+                type="tel" 
+                name="phone_home" 
+                mask={[/\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]} 
+                showMask={false}
+                placeholder="Домашний телефон"
+                value={inputs.phone_home}
+                onChange={handleChange}
+              />
+            </InputRow>
+          </Row>
+          <Row3>
+            <Column> 
+              <DocumentContainer>
+                {
+                  imgExists1 ? (
+                    <Img>{imgPreview1}</Img>
+                  ) : (
+                    <span>Селфи с паспортом</span>
+                  )
+                }
+              </DocumentContainer>
+              <label className='custom-file-upload'>
+                Выберите файл
+                <input 
+                  className="document-submit-button" 
+                  name="passport_self" 
+                  type="file" 
+                  onChange={uploadFile1}
+                  value={inputs.passport_self} 
+                />
+              </label> 
+            </Column>
+            <Column> 
+              <DocumentContainer>
+                {
+                  imgExists2 ? (
+                    <Img>{imgPreview2}</Img>
+                    ) : (  
+                      <span>Лицевая сторона паспорта</span>
+                    )
+                }
+              </DocumentContainer>
+              <label className='custom-file-upload'>
+                Выберите файл
+                <input 
+                  className="document-submit-button" 
+                  name="passport_main" 
+                  type="file" 
+                  onChange={uploadFile2} 
+                  value={inputs.passport_main} 
+                />
+              </label>  
+            </Column>
+            <Column> 
+              <DocumentContainer>
+                {
+                  imgExists3 ? (
+                    <Img>{imgPreview3}</Img>
+                    ): ( 
+                      <span>Прописка на паспорте</span>
+                    )
+                } 
+              </DocumentContainer>
+              <label className='custom-file-upload'>
+                Выберите файл
+                <input 
+                  className="document-submit-button" 
+                  name="passport_address" 
+                  type="file" 
+                  onChange={uploadFile3}
+                  value={inputs.passport_address}  
+                />
+              </label>  
+            </Column>
+          </Row3>
+          <ButtonPrimary short btnPrimary>
             {
-              imgExists1 ? (<Img>{imgPreview1}</Img>): (<span>Селфи с паспортом</span>)
+              loading ? (<SpinnerSmall />) : ('Дальше')
             }
-          </DocumentContainer>
-          <label className='custom-file-upload'>
-            Выберите файл
-            <input 
-              className="document-submit-button" 
-              name="myFile" 
-              type="file" 
-              onChange={uploadFile1} 
-            />
-          </label> 
-        </Column>
-        <Column> 
-          <DocumentContainer>
-            {
-              imgExists2 ? (<Img>{imgPreview2}</Img>): (<span>Лицевая сторона паспорта</span>)
-            }
-          </DocumentContainer>
-          <label className='custom-file-upload'>
-            Выберите файл
-            <input 
-              className="document-submit-button" 
-              name="myFile" 
-              type="file" 
-              onChange={uploadFile2} 
-            />
-          </label>  
-        </Column>
-        <Column> 
-          <DocumentContainer>
-            {
-              imgExists3 ? (<Img>{imgPreview3}</Img>): ( <span>Прописка на паспорте</span>)
-            } 
-          </DocumentContainer>
-          <label className='custom-file-upload'>
-            Выберите файл
-            <input 
-              className="document-submit-button" 
-              name="myFile" 
-              type="file" 
-              onChange={uploadFile3} 
-            />
-          </label>  
-        </Column>
-      </Row3>
-      <ButtonPrimary short btnPrimary>Дальше</ButtonPrimary>
-  </Component>
-</Container>
+          </ButtonPrimary>
+        </Form>
+    </Component>
+    {
+      !loading && !error && success ? 
+      (setTimeout(() => {
+        this.props.history.push('/credit-card');
+      }, 5000)) : null
+    }
+  </Container>
   )
 };
 
