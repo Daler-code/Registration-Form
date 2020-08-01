@@ -16,8 +16,8 @@ const useForm = () => {
   const [id, setId] = useState(0);
   const [success, setSuccess] = useState(false);
   const [inputs, setInputs] = useState({
-    username: '', 
-    lastname: '', 
+    username: '',
+    lastname: '',
     patronymic: '',
     work_place: '',
     permanent_address: '',
@@ -37,7 +37,7 @@ const useForm = () => {
     setSubmit(true);
     console.log(inputs);
     // send data to API
-    const url = 'https://zmarket.uz/api/clients/create';
+    const url = 'https://zmarket.uz/api/clients/new-create';
     const username = '169632';
     const password = 'ykizECTJEku736Vva63eipJ7V7';
     const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
@@ -66,7 +66,6 @@ const useForm = () => {
         setLoading(false)
         setSuccess(false)
         setSubmit(false)
-        console.log(error)
     }) 
     console.log(inputs);
   };
@@ -92,7 +91,7 @@ const useForm = () => {
   };
 
   // Uploading File2
-  const  uploadFile2 = (event) => {
+  const uploadFile2 = (event) => {
     event.persist();
     setInputs(inputs => (
       {...inputs, [event.target.name]: event.target.value}
