@@ -9,7 +9,7 @@ const useForm = () => {
   const [imgExists1, setImgExists1] = useState(false);
   const [imgExists2, setImgExists2] = useState(false);
   const [imgExists3, setImgExists3] = useState(false);
-  ////////////////////////INPUT FILE
+  //////////////////////////////////////////INPUT FILE
   const [submit, setSubmit] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -28,8 +28,6 @@ const useForm = () => {
     phone: ''
   });
   
-  // const token = window.btoa(user + ':' + pass);
-
   // HandleSubmit
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
@@ -37,17 +35,19 @@ const useForm = () => {
     setSubmit(true);
     console.log(inputs);
     // send data to API
-    const url = 'https://zmarket.uz/api/clients/new-create';
+    const url = '/new-create';
     const username = '169632';
     const password = 'ykizECTJEku736Vva63eipJ7V7';
     const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
-    axios.post( url, inputs,
-      {
-        headers: {
-          'Authorization': `Basic ${token}`
-        }
+    const config = {
+      method: 'post',
+      url: '/new-create',
+      headers: {
+        'Authorization': `Basic ${token}`
       },
-    )
+      data: inputs
+    }
+    axios(config)
     .then(function (response) {
       if (response.status === 200) {
         setSuccess(true)
@@ -66,7 +66,7 @@ const useForm = () => {
         setLoading(false)
         setSuccess(false)
         setSubmit(false)
-    }) 
+    })
     console.log(inputs);
   };
 
@@ -146,7 +146,6 @@ const useForm = () => {
     imgExists2,
     imgExists3
   };
-
 };
 
 export default useForm;

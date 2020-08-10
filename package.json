@@ -2,6 +2,7 @@
   "name": "regstration-form",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://zmarket.uz/api/clients",
   "engines": {
     "npm": "6.14.4",
     "node": "12.18.0"

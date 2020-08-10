@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Alert } from 'react-bootstrap';
 
-import { 
+import {
   Container, 
   Component, 
   Heading, 
@@ -172,7 +172,7 @@ const PasportDataForm = () => {
                 {
                   imgExists2 ? (
                     <Img>{imgPreview2}</Img>
-                    ) : (  
+                    ) : (
                       <span>Лицевая сторона паспорта</span>
                     )
                 }
@@ -217,12 +217,12 @@ const PasportDataForm = () => {
           </ButtonPrimary>
         </Form>
     </Component>
-    {
+    {/* {
       !loading && !error && success ? 
       (setTimeout(() => {
         this.props.history.push('/credit-card');
       }, 5000)) : null
-    }
+    } */}
   </Container>
   )
 };

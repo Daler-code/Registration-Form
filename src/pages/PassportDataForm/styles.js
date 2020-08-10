@@ -224,8 +224,12 @@ export const InputTel = styled(MaskedInput)`
   font-weight: 500;
   border-radius: 13px;
   border: none;
+  text-indent: 5px;
   &:focus {
     outline: none;
+  }
+  &:active {
+    background-color: #C6E5D3;
   }
   @media screen and (max-width: 550px) {
     border-radius: 8px;
