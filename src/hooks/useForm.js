@@ -22,9 +22,9 @@ const useForm = () => {
     work_place: '',
     permanent_address: '',
     phone_home: '',
-    passport_main: '',
-    passport_address: '',
-    passport_self: '',
+    passport_main: null,
+    passport_address: null,
+    passport_self: null,
     phone: ''
   });
   
@@ -39,7 +39,7 @@ const useForm = () => {
     const password = 'ykizECTJEku736Vva63eipJ7V7';
     const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64');
     var bodyFormData = new FormData();
-    Object.entries(inputs).forEach(([key, value])=>{ bodyFormData.append(key, value) });
+    Object.entries(inputs).forEach(([key, value]) => { bodyFormData.append(key, value) });
 
     const config = {
       method: 'post',
@@ -69,6 +69,7 @@ const useForm = () => {
         setLoading(false)
         setSuccess(false)
         setSubmit(false)
+        console.log(error)
     })
     console.log(inputs);
   };
@@ -86,9 +87,10 @@ const useForm = () => {
   // Uploading File1
   const  uploadFile1 = (event) => {
     event.persist();
-    setInputs(inputs => (
-      {...inputs, [event.target.name]: event.target.value}
-    ));
+      setInputs(inputs => (
+        {...inputs, [event.target.name]: event.target.files[0]}
+      ));
+    
     setFile1(URL.createObjectURL(event.target.files[0]))
     setImgExists1(true)
   };
@@ -96,9 +98,10 @@ const useForm = () => {
   // Uploading File2
   const uploadFile2 = (event) => {
     event.persist();
-    setInputs(inputs => (
-      {...inputs, [event.target.name]: event.target.value}
-    ));
+      setInputs(inputs => (
+        {...inputs, [event.target.name]: event.target.files[0]}
+      ));
+
     setFile2(URL.createObjectURL(event.target.files[0]))
     setImgExists2(true)
   };
@@ -106,9 +109,10 @@ const useForm = () => {
   // Uploading File3
   const  uploadFile3 = (event) => {
     event.persist();
-    setInputs(inputs => (
-      {...inputs, [event.target.name]: event.target.value}
-    ));
+      setInputs(inputs => (
+        {...inputs, [event.target.name]: event.target.files[0]}
+      ));
+
     setFile3(URL.createObjectURL(event.target.files[0]))
     setImgExists3(true)
   };
@@ -150,5 +154,4 @@ const useForm = () => {
     imgExists3
   };
 };
-
 export default useForm;

@@ -167,8 +167,9 @@ const PasportDataForm = () => {
                   className="document-submit-button" 
                   name="passport_self" 
                   type="file" 
+                  accept="image/png, image/jpeg"
                   onChange={uploadFile1}
-                  value={inputs.passport_self} 
+                  // value={inputs.passport_self} 
                 />
               </label> 
             </Column>
@@ -188,8 +189,9 @@ const PasportDataForm = () => {
                   className="document-submit-button" 
                   name="passport_main" 
                   type="file" 
+                  accept="image/png, image/jpeg"
                   onChange={uploadFile2} 
-                  value={inputs.passport_main} 
+                  // value={inputs.passport_main} 
                 />
               </label>  
             </Column>
@@ -209,8 +211,9 @@ const PasportDataForm = () => {
                   className="document-submit-button" 
                   name="passport_address" 
                   type="file" 
+                  accept="image/png, image/jpeg"
                   onChange={uploadFile3}
-                  value={inputs.passport_address}  
+                  // value={inputs.passport_address}  
                 />
               </label>  
             </Column>
