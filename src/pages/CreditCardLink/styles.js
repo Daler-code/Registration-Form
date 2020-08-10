@@ -138,13 +138,12 @@ export const Heading = styled.div`
   img {
     width: 50px;
     height: auto;
-    margin-right: 10px;
     @media screen and (max-width: 550px) {
       width: 40px;
     }
   }
   span {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 500;
     color: black;
     line-height: 35px;

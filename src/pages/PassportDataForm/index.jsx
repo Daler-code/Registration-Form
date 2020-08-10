@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 
 import {
@@ -16,12 +17,13 @@ import {
   Mask,
   Row3,
   Img,
-  Form
+  Form,
+  AlertSuccess
 } from './styles';
 import './styles.css';
 
-import ButtonPrimary from '../../components/Buttons';
 import  useForm from '../../hooks/useForm';
+import ButtonPrimary from '../../components/Buttons';
 import SpinnerSmall from '../../components/SpinnerSmall';
 
 import IconPassport from '../../assets/icons/passport.svg';
@@ -48,15 +50,18 @@ const PasportDataForm = () => {
     imgExists3
   } = useForm();
 
+  const history = useHistory();
+    
+
   return (
     <Container>
       <Component>
         {
           success && show ? (
-            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+            <AlertSuccess variant="success" onClose={() => setShow(false)} dismissible>
               <Alert.Heading>You have Registered successfully!</Alert.Heading>
               <p>You are redirected to  Credit cards link page in 5 seconds!</p>
-            </Alert>
+            </AlertSuccess>
           ) : (
             null
           )
@@ -217,12 +222,13 @@ const PasportDataForm = () => {
           </ButtonPrimary>
         </Form>
     </Component>
-    {/* {
-      !loading && !error && success ? 
-      (setTimeout(() => {
-        this.props.history.push('/credit-card');
-      }, 5000)) : null
-    } */}
+    {
+      !loading && !error && success ? (
+        setTimeout(() => {
+          history.push('/credit-card');
+        }, 5000)
+      ) : null
+    }
   </Container>
   )
 };

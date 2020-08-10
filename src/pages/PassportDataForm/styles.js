@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import MaskedInput from 'react-text-mask';
+import { Alert } from 'react-bootstrap';
 
 import ImageBackground from '../../assets/images/FormPageBg.png';
 
@@ -70,7 +71,7 @@ export const Heading = styled.div`
     }
   }
   span {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 500;
     color: black;
     line-height: 35px;
@@ -259,18 +260,17 @@ export const InputRow = styled.div`
 
 export const Mask = styled.div`
   width: 120px;
-  height: 57px;
+  height: 55px;
   display: flex;
   align-items: center;
   background-color: #C6E5D3;
   border-radius: 11px;
   margin-right: -25px;
-  padding-left: 30px;
+  padding-left: 10px;
   span {
     font-size: 18px;
     font-weight: 500;
     color: #009F80;
-    margin-top: -4px;
   }
   @media screen and (max-width: 550px) {
     border-radius: 8px;
@@ -304,4 +304,8 @@ export const Input = styled.input`
   @media screen and (max-width: 450px) {
     width: 100%;
   }
+`;
+
+export const AlertSuccess = styled(Alert)`
+  width: 100%;
 `;

@@ -35,17 +35,20 @@ const useForm = () => {
     setSubmit(true);
     console.log(inputs);
     // send data to API
-    const url = '/new-create';
     const username = '169632';
     const password = 'ykizECTJEku736Vva63eipJ7V7';
-    const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
+    const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64');
+    var bodyFormData = new FormData();
+    Object.entries(inputs).forEach(([key, value])=>{ bodyFormData.append(key, value) });
+
     const config = {
       method: 'post',
       url: '/new-create',
       headers: {
-        'Authorization': `Basic ${token}`
+        'Authorization': `Basic ${token}`,
+        'Content-Type':'multipart/form-data'
       },
-      data: inputs
+      data: bodyFormData
     }
     axios(config)
     .then(function (response) {
