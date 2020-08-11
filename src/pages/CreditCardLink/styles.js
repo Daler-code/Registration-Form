@@ -98,7 +98,7 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 20px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   span {
     font-size: 16px;
     font-weight: 500;
