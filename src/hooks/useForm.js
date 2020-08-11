@@ -43,7 +43,7 @@ const useForm = () => {
 
     const config = {
       method: 'post',
-      url: '/new-create',
+      url: 'https://zmarket.uz/api/clients/new-create',
       headers: {
         'Authorization': `Basic ${token}`,
         'Content-Type':'multipart/form-data'
