@@ -16,15 +16,15 @@ export const Container = styled.div`
   margin: 0;
   padding-top: 50px;
   padding-bottom: 50px;
+  /* border: 2px solid black; */
   @media screen and (max-width: 768px) {
     align-items: center;
     justify-content: center;
   }
   @media screen and (max-width: 550px) {
-    padding-top: 0;
-    padding-bottom: 0;
     background-image: none;
     background-color: white;
+    padding: 0;
   }
 `;
 
@@ -39,6 +39,7 @@ export const Component = styled.div`
   background-color: white;
   border-radius: 25px;
   margin-left: 100px;
+  /* border: 2px solid red; */
   @media screen and (max-width: 1200px) {
     width: 70vw;
   }
@@ -47,12 +48,12 @@ export const Component = styled.div`
     margin-left: 0;
   }
   @media screen and (max-width: 550px) {
-    width: 90%;
+    width: 100%;
     height: 80%;
     border-radius: 0;
-    padding: 30px;
     margin-top: 100px;
     margin-bottom: auto;
+    padding: 30px;
   }
 `;
 
@@ -76,7 +77,7 @@ export const AlertComponent = styled.div`
     margin-left: 0;
   }
   @media screen and (max-width: 550px) {
-    width: 90%;
+    width: 100%;
     height: 20%;
     border-radius: 0;
     padding: 20px;
@@ -87,6 +88,7 @@ export const AlertComponent = styled.div`
     justify-content: center;
     margin-top: auto;
     margin-bottom: auto;
+    padding: 30px;
   }
 `;
 
@@ -96,16 +98,20 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 20px;
+  border: 2px solid red;
   span {
     font-size: 16px;
     font-weight: 500;
     color: #9A9A9A;
     @media screen and (max-width: 550px) {
+      width: 100%;
       font-size: 14px;
       line-height: 18px;
       text-align: center;
       margin-bottom: 20px;
       padding-right: 0;
+      margin-right: auto;
+      margin-left: auto;
     }
   }
 `;
@@ -149,6 +155,7 @@ export const Heading = styled.div`
     line-height: 35px;
     text-transform: uppercase;
     margin-left: 10px;
+    /* border: 2px solid red; */
     @media screen and (max-width: 768px) {
       font-size: 20px;
       line-height: 25px;
@@ -169,7 +176,7 @@ export const InputContainer = styled.div`
   margin-bottom: 30px;
   /* border: 2px solid red; */
   @media screen and (max-width: 550px) {
-    width: 80%;
+    width: 100%;
   }
 `;
 
@@ -203,10 +210,12 @@ export const Title = styled.div`
   color: black;
   font-weight: 500;
   margin-bottom: 30px;
+  /* border: 2px solid red; */
   span {
     color: #009F80;
   }
   @media screen and (max-width: 550px) {
+    width: 100%;
     font-size: 14px;
     text-align: center;
   }

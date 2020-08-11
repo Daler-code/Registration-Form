@@ -30,6 +30,7 @@ export const Component = styled.div`
   @media screen and (max-width: 550px) {
     width: 100%;
     height: 100%;
+    border-radius: 0;
   }
 `;
 

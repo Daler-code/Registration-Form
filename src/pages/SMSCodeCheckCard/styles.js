@@ -41,7 +41,7 @@ export const Component = styled.div`
   @media screen and (max-width: 550px) {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 0px;
     padding: 30px;
     margin-left: auto;
     margin-right: auto;

@@ -10,10 +10,4 @@ export const Container = styled.div`
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   overflow-x: hidden;
-  margin-left: -20px;
-  margin-top: -20px;
-  margin-bottom: -20px;
-  @media screen and (max-width: 550px) {
-    margin-left: -5px;
-  }
 `;
