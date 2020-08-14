@@ -42,6 +42,13 @@ export const BtnPrimary = css`
     height: 55px;
     font-size: 16px;
   }
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
 `;
 
 export const BtnAlert = css`

@@ -68,6 +68,7 @@ export const Heading = styled.div`
     @media screen and (max-width: 550px) {
       width: 30px;
       margin-bottom: 10px;
+      margin-right: 5px;
     }
   }
   span {
@@ -77,7 +78,8 @@ export const Heading = styled.div`
     line-height: 35px;
     margin-left: 10px;
     @media screen and (max-width: 550px) {
-      font-size: 18px;
+      font-size: 15px;
+      margin-left: 5px;
     }
   }
 `;
@@ -239,6 +241,9 @@ export const InputTel = styled(MaskedInput)`
     color: #009F80;
     font-size: 17px;
     font-weight: 500;
+    @media screen and (max-width: 550px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -271,6 +276,9 @@ export const Mask = styled.div`
     font-size: 18px;
     font-weight: 500;
     color: #009F80;
+    @media screen and (max-width: 550px) {
+      font-size: 16px;
+    }
   }
   @media screen and (max-width: 550px) {
     border-radius: 8px;
@@ -300,12 +308,25 @@ export const Input = styled.input`
     font-size: 17px;
     font-weight: 500;
     text-indent: 20px;
+    @media screen and (max-width: 550px) {
+      font-size: 16px;
+    }
   }
   @media screen and (max-width: 450px) {
     width: 100%;
   }
 `;
 
-export const AlertSuccess = styled(Alert)`
+export const AlertBox = styled(Alert)`
   width: 100%;
+`;
+
+export const AlertHeading = styled(Alert.Heading)`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  @media screen and (max-width: 550px) {
+    font-size: 19px;
+    line-height: 27px;
+  }
 `;

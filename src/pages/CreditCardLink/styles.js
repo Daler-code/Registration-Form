@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import MaskedInput from 'react-text-mask';
+import { Alert } from 'react-bootstrap';
 
 import ImageBackground from '../../assets/images/FormPageBg.png';
 
@@ -116,7 +117,7 @@ export const TextWrapper = styled.div`
   }
 `;
 
-export const AlertHeading = styled.div`
+export const AlertBoxHeading = styled.div`
   font-size: 18px;
   font-weight: 500;
   color: #009F80;
@@ -201,6 +202,9 @@ export const Input = styled(MaskedInput)`
     font-size: 17px;
     font-weight: 500;
     text-indent: 20px;
+    @media screen and (max-width: 550px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -219,4 +223,27 @@ export const Title = styled.div`
     font-size: 14px;
     text-align: center;
   }
+`;
+
+export const AlertBox = styled(Alert)`
+  width: 100%;
+`;
+
+export const AlertHeading = styled(Alert.Heading)`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  @media screen and (max-width: 550px) {
+    font-size: 19px;
+    line-height: 27px;
+  }
+`;
+
+export const Form = styled.form`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;

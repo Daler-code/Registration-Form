@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import MaskedInput from 'react-text-mask';
+import { Alert } from 'react-bootstrap';
 
 import ImageBackground from '../../assets/images/FormPageBg.png';
 
@@ -130,4 +131,27 @@ export const Title = styled.div`
     width: 100%;
     font-size: 14px;
   }
+`;
+
+export const AlertBox = styled(Alert)`
+  width: 100%;
+`;
+
+export const AlertHeading = styled(Alert.Heading)`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  @media screen and (max-width: 550px) {
+    font-size: 19px;
+    line-height: 27px;
+  }
+`;
+
+export const Form = styled.form`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;

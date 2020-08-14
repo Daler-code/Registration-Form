@@ -18,7 +18,8 @@ import {
   Row3,
   Img,
   Form,
-  AlertSuccess
+  AlertBox,
+  AlertHeading
 } from './styles';
 import './styles.css';
 
@@ -38,7 +39,6 @@ const PasportDataForm = () => {
     uploadFile2,
     uploadFile3,
     inputs,
-    submit,
     error,
     loading,
     success,
@@ -57,13 +57,16 @@ const PasportDataForm = () => {
     <Container>
       <Component>
         {
-          success && show ? (
-            <AlertSuccess variant="success" onClose={() => setShow(false)} dismissible>
-              <Alert.Heading>You have Registered successfully!</Alert.Heading>
+          !error && success && show ? (
+            <AlertBox variant="success" onClose={() => setShow(false)} dismissible>
+              <AlertHeading>You have Registered successfully!</AlertHeading>
               <p>You are redirected to  Credit cards link page in 5 seconds!</p>
-            </AlertSuccess>
+            </AlertBox>
           ) : (
-            null
+            <AlertBox variant="danger" onClose={() => setShow(false)} dismissible>
+              <AlertHeading>Something went wrong :/</AlertHeading>
+              {/* <p>You are redirected to  Credit cards link page in 5 seconds!</p> */}
+            </AlertBox> 
           )
         }
         <Heading>

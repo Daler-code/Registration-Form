@@ -22,7 +22,11 @@ const RegistrationSuccess = () => (
         В течении 30 минут ваш аккаунт пройдет верификацию. Статус верификации можно
         проверить в личном кабинете. После можете приступать к покупкам.
       </Title>
-      <ButtonPrimary btnPrimary>Кабинет</ButtonPrimary>
+      <ButtonPrimary btnPrimary >
+        <a href="https://www.google.com/">
+          Кабинет
+        </a>
+      </ButtonPrimary>
     </Component>
   </Container>
 );
