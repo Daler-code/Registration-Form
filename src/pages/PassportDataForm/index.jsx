@@ -63,10 +63,17 @@ const PasportDataForm = () => {
               <p>You are redirected to  Credit cards link page in 5 seconds!</p>
             </AlertBox>
           ) : (
+            null
+          )
+        }
+        {
+          !success && error && show ? (
             <AlertBox variant="danger" onClose={() => setShow(false)} dismissible>
               <AlertHeading>Something went wrong :/</AlertHeading>
               {/* <p>You are redirected to  Credit cards link page in 5 seconds!</p> */}
             </AlertBox> 
+          ) : (
+            null
           )
         }
         <Heading>

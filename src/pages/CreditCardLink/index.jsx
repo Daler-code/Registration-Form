@@ -49,10 +49,17 @@ const CreditCardLink = () => {
               <p>You are redirected to SMS check page in 5 seconds!</p>
             </AlertBox>
           ) : (
+            null
+          )
+        }
+        {
+          !success2 && error2 && show ? (
             <AlertBox variant="danger" onClose={() => setShow(false)} dismissible>
               <AlertHeading>Something went wrong :/</AlertHeading>
               {/* <p>You are redirected to  Credit cards link page in 5 seconds!</p> */}
             </AlertBox> 
+          ) : (
+            null
           )
         }
         <Heading>
